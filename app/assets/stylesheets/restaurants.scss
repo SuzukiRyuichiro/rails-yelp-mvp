@@ -5,19 +5,15 @@
 @import 'components/banner';
 @import 'components/footer';
 
-a {
-   text-decoration: none;
-}
 
-a:hover {
-   text-decoration: none;
-}
 
 .back:hover {
-   text-decoration: none;
+  text-decoration: none;
+  color: gray;
 }
 
 .back {
   text-decoration: none;
+  color: white;
 }
 

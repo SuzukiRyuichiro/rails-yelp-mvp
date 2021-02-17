@@ -1,9 +1,16 @@
 <div class="container py-5 text-decoration-none">
-  <% @restaurants.each do |restaurant| %>
-    <%= link_to restaurant_path(restaurant) do %>
-      <div class="card-category my-2" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://source.unsplash.com/500x100/?food)">
-        <h1><%= restaurant.name %></h1>
-      </div>
+  <h1>Restaurantes</h1>
+  <div class="cards">
+    <% x = 0 %>
+   <% @restaurants.each do |restaurant| %>
+    <% link = "https://source.unsplash.com/#{x + 500}x100/?food" %>
+    <% x += 1 %>
+      <%= link_to restaurant_path(restaurant) do %>
+        <div class="card-category my-2" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= link %>)">
+          <h1><%= restaurant.name %></h1>
+        </div>
+      <% end %>
     <% end %>
-  <% end %>
+  </div>
 </div>
+
