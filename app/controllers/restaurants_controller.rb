@@ -7,6 +7,4 @@ class RestaurantsController < ApplicationController
     @restaurant = Restaurant.find(params[:id])
     @reviews = Review.where(restaurant_id: params[:id])
   end
-
-
 end
