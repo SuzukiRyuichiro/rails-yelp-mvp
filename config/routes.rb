@@ -1,3 +1,11 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  # verb '/path', to: 'controller#action', as: :prefix
+  get 'restaurants', to: 'restaurants#index', as: :restaurants
+
+  get 'restaurants/:id', to: 'restaurants#show', as: :restaurant
+
+  # GET "restaurants/38/reviews/new"
+  # POST "restaurants/38/reviews"
+
+  get 'restaurants/:id/reviews/new', to: 'reviews'
 end

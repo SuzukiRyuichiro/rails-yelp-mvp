@@ -1,0 +1,40 @@
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://source.unsplash.com/1600x900/?restaurant);">
+  <div class="container">
+    <h1><%= @restaurant.name %></h1>
+    <p>address: <%= @restaurant.address %></p>
+    <p>tel: <%= @restaurant.phone_number %></p>
+    <!-- <#%= link_to class="btn btn-flat" %>  -->
+  </div>
+</div>
+
+<div class="container">
+  <h1 class="my-5">Reviews</h1>
+  <% @reviews.each do |review| %>
+  <div class="row my-5 border-bottom d-flex flex-column">
+    <div class="mb-5">
+      <h4><%= review.content %></h4>
+    </div>
+    <div>
+      <% review.rating.times do %>
+      <i class="fas fa-coffee"></i>
+      <% end %>
+    </div>
+  </div>
+  <% end %>
+  <div>
+    <%= link_to "+ write us a review　😊", restaurant_path(@restaurant)%>
+  </div>
+  <div class="footer">
+    <div class="footer-links">
+      <a href="#"><i class="fab fa-github"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-facebook"></i></a>
+      <a href="#"><i class="fab fa-twitter"></i></a>
+      <a href="#"><i class="fab fa-linkedin"></i></a>
+    </div>
+    <div class="footer-copyright">
+      This page is powered by coffee <i class="fas fa-coffee"></i>
+    </div>
+  </div>
+
+</div>

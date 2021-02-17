@@ -24,6 +24,6 @@
       rating:(0..5).to_a.sample
     )
     review.restaurant_id = restaurant.id
-    review.save!
+    review.save
   end
 end
