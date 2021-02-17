@@ -16,14 +16,14 @@
     category: Restaurant::CATEGORY.sample
   )
 
-  review = Review.new(
-    content: Faker::Quote.yoda,
-    rating:(0..5).to_a.sample
-  )
-
   restaurant.save
 
-  restaurant.id = review.restaurant_id
-
-  review.save
+  5.times do
+    review = Review.new(
+      content: Faker::Quote.yoda,
+      rating:(0..5).to_a.sample
+    )
+    review.restaurant_id = restaurant.id
+    review.save!
+  end
 end
